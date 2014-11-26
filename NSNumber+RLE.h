@@ -16,8 +16,6 @@
 @property (nonatomic, readonly) UIFont *ptFont;
 @property (nonatomic, readonly) UIFont *ptMediumFont;
 @property (nonatomic, readonly) UIFont *ptLightFont;
-@property (nonatomic, readonly) UIFont *ptAltFont;
-@property (nonatomic, readonly) UIFont *ptAltLightFont;
 
 @property (nonatomic, readonly) UIColor *rgbColor;
 @property (nonatomic, readonly) UIColor *rgbaColor;

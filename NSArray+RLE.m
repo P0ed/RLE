@@ -15,10 +15,11 @@
 - (NSIndexPath *)indexPath {
 	
 	NSUInteger *indexes = (NSUInteger *)malloc(sizeof(NSUInteger) * self.count);
-	[self eachWithIndex:^(NSNumber *object, NSUInteger index) {
+	NSUInteger i = 0;
+	for (NSNumber *value in self) {
 		
-		indexes[index] = object.unsignedIntegerValue;
-	}];
+		indexes[i++] = value.unsignedIntegerValue;
+	}
 	NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:self.count];
 	free(indexes);
 	

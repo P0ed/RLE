@@ -44,12 +44,12 @@
 
 - (NSAttributedString *)attributedString {
 	
-	return [[NSAttributedString alloc] initWithString:NotNullStr(self)];
+	return [[NSAttributedString alloc] initWithString:self];
 }
 
 - (NSMutableAttributedString *)mutableAttributedString {
 	
-	return [[NSMutableAttributedString alloc] initWithString:NotNullStr(self)];
+	return [[NSMutableAttributedString alloc] initWithString:self];
 }
 
 - (NSPredicate *)predicate {

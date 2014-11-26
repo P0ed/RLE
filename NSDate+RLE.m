@@ -10,10 +10,6 @@
 
 @implementation NSDate (RLE)
 
-- (NSDate *)ntpCorrected {
-    return [self dateByAddingTimeInterval:[NSDate timeIntervalSinceNetworkDate]];
-}
-
 - (NSString *)stringUsingFormat:(NSString *)format {
 	
 	NSDateFormatter *dateFormatter = [NSDateFormatter new];

@@ -9,6 +9,5 @@
 @import Foundation;
 
 @interface NSDate (RLE)
-- (NSDate *)ntpCorrected;
 - (NSString *)stringUsingFormat:(NSString *)format;
 @end

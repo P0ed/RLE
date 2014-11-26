@@ -12,27 +12,17 @@
 
 - (UIFont *)ptFont {
 	
-	return [UIFont fontWithName:BRAND_FONT_REGULAR size:self.integerValue];
+	return [UIFont fontWithName:@"HelveticaNeue" size:self.integerValue];
 }
 
 - (UIFont *)ptMediumFont {
 	
-	return [UIFont fontWithName:BRAND_FONT_MEDIUM size:self.integerValue];
+	return [UIFont fontWithName:@"HelveticaNeue-Medium" size:self.integerValue];
 }
 
 - (UIFont *)ptLightFont {
 	
-	return [UIFont fontWithName:BRAND_FONT_LIGHT size:self.integerValue];
-}
-
-- (UIFont *)ptAltFont {
-    
-    return [UIFont fontWithName:ALTERNATIVE_FONT_REGULAR size:self.integerValue];
-}
-
-- (UIFont *)ptAltLightFont {
-	
-	return [UIFont fontWithName:ALTERNATIVE_FONT_LIGHT size:self.integerValue];
+	return [UIFont fontWithName:@"HelveticaNeue-Light" size:self.integerValue];
 }
 
 - (UIColor *)rgbColor {
