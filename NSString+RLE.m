@@ -67,11 +67,16 @@
 	return [NSSortDescriptor sortDescriptorWithKey:self ascending:NO];
 }
 
-- (NSDate *)dateUsingFormat:(NSString *)format {
+- (NSDate *(^)(NSString *))dateUsingFormat { return ^(NSString *format) {
 	
 	NSDateFormatter *dateFormatter = [NSDateFormatter new];
 	dateFormatter.dateFormat = format;
 	return [dateFormatter dateFromString:self];
-}
+};}
+
+- (BOOL (^)(NSString *))grep { return ^BOOL(NSString *rx) {
+	
+	return [self rangeOfString:rx options:NSRegularExpressionSearch].location != NSNotFound;
+};}
 
 @end

@@ -9,5 +9,5 @@
 @import Foundation;
 
 @interface NSDate (RLE)
-- (NSString *)stringUsingFormat:(NSString *)format;
+@property (nonatomic, readonly) NSString *(^stringUsingFormat)(NSString *format);
 @end

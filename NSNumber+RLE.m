@@ -41,4 +41,15 @@
 						   alpha:(self.integerValue & 0xFF) / 255.0];
 }
 
+- (NSNumber *(^)(void (^)(void)))ifTrue { return ^(void (^block)(void)) {
+	
+	if (self.boolValue) block();
+	return self;
+};}
+
+- (NSNumber *(^)(void (^)(void)))ifFalse {
+	
+	return @(!self.boolValue).ifTrue;
+}
+
 @end

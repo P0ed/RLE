@@ -20,4 +20,7 @@
 @property (nonatomic, readonly) UIColor *rgbColor;
 @property (nonatomic, readonly) UIColor *rgbaColor;
 
+@property (nonatomic, readonly) NSNumber *(^ifTrue)(void (^block)(void));
+@property (nonatomic, readonly) NSNumber *(^ifFalse)(void (^block)(void));
+
 @end

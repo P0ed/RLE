@@ -26,6 +26,8 @@
 @property (nonatomic, readonly) NSSortDescriptor *ascending;
 @property (nonatomic, readonly) NSSortDescriptor *descending;
 
-- (NSDate *)dateUsingFormat:(NSString *)format;
+@property (nonatomic, readonly) NSDate *(^dateUsingFormat)(NSString *format);
+
+@property (nonatomic, readonly) BOOL (^grep)(NSString *rx);
 
 @end
