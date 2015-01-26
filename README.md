@@ -2,10 +2,12 @@
 
 ### Install via [CocoaPods](http://cocoapods.org/):
 1. Add the following line to your `Podfile`
+
 	```
 	pod 'RLE'
 	```
 2. Import the public header
+
 	```
 	#import <RubyLikeExtensions.h>
 	```
