@@ -1,8 +1,17 @@
-Literal convertibles for common obj-c types
--------------------------------------------
+### Literal convertibles for common obj-c types
 
-Usage:
-======
+### Install via [CocoaPods](http://cocoapods.org/):
+1. Add the following line to your `Podfile`
+	```
+	pod 'RLE'
+	```
+2. Import the public header
+	```
+	#import <RubyLikeExtensions.h>
+	```
+
+## Usage:
+
 
 ```Objective-C
 NSMutableAttributedString *string = @"Featured".localized.mutableAttributedString;
