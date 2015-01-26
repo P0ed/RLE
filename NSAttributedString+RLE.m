@@ -12,8 +12,7 @@
 
 @implementation NSAttributedString (RLE)
 
-- (NSRange)wholeString {
-	
+- (NSRange)wholeString {	
 	return NSMakeRange(0, self.length);
 }
 

@@ -11,14 +11,14 @@
 
 @interface NSPredicate (RLE)
 
-@property (nonatomic, readonly) NSPredicate *notPredicate;
+- (NSPredicate *)notPredicate;
 
 @end
 
 
 @interface NSArray (RLENSPredicate)
 
-@property (nonatomic, readonly) NSPredicate *andPredicate;
-@property (nonatomic, readonly) NSPredicate *orPredicate;
+- (NSPredicate *)andPredicate;
+- (NSPredicate *)orPredicate;
 
 @end

@@ -9,9 +9,21 @@
 
 @import Foundation;
 
+
+typedef NSArray *(^RLEMapFunction)(id(^)(id));
+typedef NSArray *(^RLEFilterFunction)(BOOL(^)(id));
+
+
+extern RLEMapFunction tmap(NSArray *);
+extern RLEFilterFunction tfilter(NSArray *);
+
+
 @interface NSArray (RLE)
 
-@property (nonatomic, readonly) NSIndexPath *indexPath;
-@property (nonatomic, readonly) NSSet *set;
+- (NSSet *)set;
+- (NSIndexPath *)indexPath;
+
+- (RLEMapFunction)map;
+- (RLEFilterFunction)filter;
 
 @end

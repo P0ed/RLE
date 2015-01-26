@@ -8,6 +8,7 @@
 
 #import "NSPredicate+RLE.h"
 
+
 @implementation NSPredicate (RLE)
 
 - (NSPredicate *)notPredicate {

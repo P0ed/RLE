@@ -8,6 +8,9 @@
 
 @import Foundation;
 
+
 @interface NSDate (RLE)
-@property (nonatomic, readonly) NSString *(^stringUsingFormat)(NSString *format);
+
+- (NSString *(^)(NSString *format))stringUsingFormat;
+
 @end

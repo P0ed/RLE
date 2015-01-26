@@ -13,21 +13,21 @@
 
 @interface NSString (RLE)
 
-@property (nonatomic, readonly) NSURL *URL;
-@property (nonatomic, readonly) NSUInteger hexValue;
-@property (nonatomic, readonly) NSString *localized;
-@property (nonatomic, readonly) UIImage *image;
-@property (nonatomic, readonly) NSRange wholeString;
+- (NSURL *)URL;
+- (NSUInteger)hexValue;
+- (NSString *)localized;
+- (UIImage *)image;
+- (NSRange)wholeString;
 
-@property (nonatomic, readonly) NSAttributedString *attributedString;
-@property (nonatomic, readonly) NSMutableAttributedString *mutableAttributedString;
+- (NSAttributedString *)attributedString;
+- (NSMutableAttributedString *)mutableAttributedString;
 
-@property (nonatomic, readonly) NSPredicate *predicate;
-@property (nonatomic, readonly) NSSortDescriptor *ascending;
-@property (nonatomic, readonly) NSSortDescriptor *descending;
+- (NSPredicate *)predicate;
+- (NSSortDescriptor *)ascending;
+- (NSSortDescriptor *)descending;
 
-@property (nonatomic, readonly) NSDate *(^dateUsingFormat)(NSString *format);
+- (NSDate *(^)(NSString *format))dateUsingFormat;
 
-@property (nonatomic, readonly) BOOL (^grep)(NSString *rx);
+- (BOOL (^)(NSString *rx))grep;
 
 @end

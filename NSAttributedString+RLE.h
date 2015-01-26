@@ -8,11 +8,10 @@
 
 
 @import Foundation;
-@import UIKit;
 
 
 @interface NSAttributedString (RLE)
 
-@property (nonatomic, readonly) NSRange wholeString;
+- (NSRange)wholeString;
 
 @end

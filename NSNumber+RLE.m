@@ -12,17 +12,17 @@
 
 - (UIFont *)ptFont {
 	
-	return [UIFont fontWithName:@"HelveticaNeue" size:self.integerValue];
+	return [UIFont fontWithName:@"HelveticaNeue" size:self.doubleValue];
 }
 
 - (UIFont *)ptMediumFont {
 	
-	return [UIFont fontWithName:@"HelveticaNeue-Medium" size:self.integerValue];
+	return [UIFont fontWithName:@"HelveticaNeue-Medium" size:self.doubleValue];
 }
 
 - (UIFont *)ptLightFont {
 	
-	return [UIFont fontWithName:@"HelveticaNeue-Light" size:self.integerValue];
+	return [UIFont fontWithName:@"HelveticaNeue-Light" size:self.doubleValue];
 }
 
 - (UIColor *)rgbColor {
@@ -31,14 +31,6 @@
 						   green:((self.integerValue & 0xFF00) >> 8) / 255.0
 							blue:(self.integerValue & 0xFF) / 255.0
 						   alpha:1];
-}
-
-- (UIColor *)rgbaColor {
-	
-    return [UIColor colorWithRed:((self.integerValue & 0xFF000000) >> 24) / 255.0
-						   green:((self.integerValue & 0xFF0000) >> 16) / 255.0
-							blue:((self.integerValue & 0xFF00) >> 8) / 255.0
-						   alpha:(self.integerValue & 0xFF) / 255.0];
 }
 
 - (NSNumber *(^)(void (^)(void)))ifTrue { return ^(void (^block)(void)) {

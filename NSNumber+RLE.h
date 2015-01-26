@@ -13,14 +13,13 @@
 
 @interface NSNumber (RLE)
 
-@property (nonatomic, readonly) UIFont *ptFont;
-@property (nonatomic, readonly) UIFont *ptMediumFont;
-@property (nonatomic, readonly) UIFont *ptLightFont;
+- (UIFont *)ptFont;
+- (UIFont *)ptMediumFont;
+- (UIFont *)ptLightFont;
 
-@property (nonatomic, readonly) UIColor *rgbColor;
-@property (nonatomic, readonly) UIColor *rgbaColor;
+- (UIColor *)rgbColor;
 
-@property (nonatomic, readonly) NSNumber *(^ifTrue)(void (^block)(void));
-@property (nonatomic, readonly) NSNumber *(^ifFalse)(void (^block)(void));
+- (NSNumber *(^)(void (^block)(void)))ifTrue;
+- (NSNumber *(^)(void (^block)(void)))ifFalse;
 
 @end
