@@ -14,7 +14,7 @@
 @interface NSString (RLE)
 
 - (NSURL *)URL;
-- (NSUInteger)hexValue;
+- (NSNumber *)hexValue;
 - (NSString *)localized;
 - (UIImage *)image;
 - (NSRange)wholeString;

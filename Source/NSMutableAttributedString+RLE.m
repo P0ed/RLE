@@ -14,27 +14,22 @@
 @implementation NSMutableAttributedString (RLE)
 
 - (void)setAttribute:(NSString *)attrName value:(id)value {
-	
 	[self addAttribute:attrName value:value range:self.wholeString];
 }
 
 - (void)setFont:(UIFont *)font {
-	
 	[self setAttribute:NSFontAttributeName value:font];
 }
 
 - (void)setTextColor:(UIColor *)textColor {
-	
 	[self setAttribute:NSForegroundColorAttributeName value:textColor];
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-	
 	[self setAttribute:NSBackgroundColorAttributeName value:backgroundColor];
 }
 
 - (void)setParagraphStyle:(NSParagraphStyle *)paragraphStyle {
-	
 	[self setAttribute:NSParagraphStyleAttributeName value:paragraphStyle];
 }
 
@@ -80,29 +75,24 @@
 }
 
 - (UIFont *)font {
-	
 	return [self attribute:NSFontAttributeName];
 }
 
 - (UIColor *)textColor {
-	
 	return [self attribute:NSForegroundColorAttributeName];
 }
 
 - (UIColor *)backgroundColor {
-	
 	return [self attribute:NSBackgroundColorAttributeName];
 }
 
 - (NSParagraphStyle *)paragraphStyle {
-	
 	return [self attribute:NSParagraphStyleAttributeName];
 }
 
 - (NSTextAlignment)alignment {
 	
 	NSParagraphStyle *paragraphStyle = self.paragraphStyle ?: NSParagraphStyle.defaultParagraphStyle;
-	
 	return paragraphStyle.alignment;
 }
 

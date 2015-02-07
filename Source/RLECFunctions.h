@@ -6,15 +6,16 @@
 //
 //
 
+
 #define SELString(SELECTOR) \
 NSStringFromSelector(@selector(SELECTOR))
+
 
 #define ResignFirstResponder() \
 [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil]
 
 
 #pragma mark - NSUserDefaults
-
 @import Foundation.NSUserDefaults;
 
 static inline void NSUserDefaultsSync(void(^block)(NSUserDefaults const * const defaults)) {

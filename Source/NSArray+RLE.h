@@ -14,8 +14,8 @@ typedef NSArray *(^RLEMapFunction)(id(^)(id));
 typedef NSArray *(^RLEFilterFunction)(BOOL(^)(id));
 
 
-extern RLEMapFunction tmap(NSArray *);
-extern RLEFilterFunction tfilter(NSArray *);
+extern RLEMapFunction cmap(NSArray *);
+extern RLEFilterFunction cfilter(NSArray *);
 
 
 @interface NSArray (RLE)

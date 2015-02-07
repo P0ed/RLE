@@ -11,11 +11,13 @@
 
 @implementation NSDate (RLE)
 
-- (NSString *(^)(NSString *))stringUsingFormat { return ^(NSString *format) {
-	
-	NSDateFormatter *dateFormatter = [NSDateFormatter new];
-	dateFormatter.dateFormat = format;
-	return [dateFormatter stringFromDate:self];
-};}
+- (NSString *(^)(NSString *))stringUsingFormat {
+	return ^(NSString *format) {
+		
+		NSDateFormatter *dateFormatter = NSDateFormatter.new;
+		dateFormatter.dateFormat = format;
+		return [dateFormatter stringFromDate:self];
+	};
+}
 
 @end

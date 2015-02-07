@@ -12,7 +12,6 @@
 @implementation NSPredicate (RLE)
 
 - (NSPredicate *)notPredicate {
-	
 	return [NSCompoundPredicate notPredicateWithSubpredicate:self];
 }
 
@@ -22,12 +21,10 @@
 @implementation NSArray (RLENSPredicate)
 
 - (NSPredicate *)andPredicate {
-	
 	return [NSCompoundPredicate andPredicateWithSubpredicates:self];
 }
 
 - (NSPredicate *)orPredicate {
-	
 	return [NSCompoundPredicate orPredicateWithSubpredicates:self];
 }
 

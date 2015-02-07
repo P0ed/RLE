@@ -23,3 +23,14 @@
 - (NSNumber *(^)(void (^block)(void)))ifFalse;
 
 @end
+
+
+extern void RLESetupFontNamesMap(NSDictionary *fontNamesMap);
+
+
+typedef NS_ENUM(NSInteger, RLEFontStyle) {
+	
+	RLEFontStyleLight,
+	RLEFontStyleRegular,
+	RLEFontStyleMedium
+};
