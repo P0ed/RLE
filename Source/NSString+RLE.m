@@ -1,12 +1,3 @@
-//
-//  NSString+RLE.m
-//  RubyLikeExtensions
-//
-//  Created by Konstantin Sukharev on 03/05/14.
-//
-//
-
-
 #import "NSString+RLE.h"
 
 
@@ -43,10 +34,6 @@
 
 - (NSMutableAttributedString *)mutableAttributedString {
 	return [[NSMutableAttributedString alloc] initWithString:self];
-}
-
-- (NSPredicate *)predicate {
-	return [NSPredicate predicateWithFormat:self];
 }
 
 - (NSSortDescriptor *)ascending {
