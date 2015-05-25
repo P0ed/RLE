@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+RLE.h"
+#import "ReusableProxy.h"
 
 @implementation NSObject (RLE)
 
@@ -27,11 +28,53 @@
 	});
 	
 	if ([self conformsToProtocol:@protocol(NSMutableCopying)]) {
-		
 		mutableObject = [mutableClasses containsObject:self.class] ? self : self.mutableCopy;
 	}
 	
 	return mutableObject;
+}
+
+- (instancetype)onMain {
+	
+	ReusableProxy *proxy = [ReusableProxy proxyWithTarget:self];
+	proxy.forwardInvocationBlock = ^(ReusableProxy *proxy, NSInvocation *invocation) {
+	
+		dispatch_block_t invokeBlock = ^{
+			[invocation invokeWithTarget:proxy.target];
+		};
+		
+		if (NSThread.isMainThread) {
+			invokeBlock();
+		} else {
+			dispatch_sync(dispatch_get_main_queue(), invokeBlock);
+		}
+	};
+	
+	return (id)proxy;
+}
+
+- (instancetype)onBackground {
+	
+	ReusableProxy *proxy = [ReusableProxy proxyWithTarget:self];
+	proxy.forwardInvocationBlock = ^(ReusableProxy *proxy, NSInvocation *invocation) {
+		
+		dispatch_block_t invokeBlock = ^{
+			[invocation invokeWithTarget:proxy.target];
+		};
+		
+		if (NSThread.isMainThread) {
+			dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+			dispatch_async(dispatch_get_global_queue(0, 0), ^{
+				invokeBlock();
+				dispatch_semaphore_signal(semaphore);
+			});
+			dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+		} else {
+			invokeBlock();
+		}
+	};
+	
+	return (id)proxy;
 }
 
 @end

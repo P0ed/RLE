@@ -13,4 +13,7 @@
 
 - mutable;
 
+- (instancetype)onMain;
+- (instancetype)onBackground;
+
 @end
