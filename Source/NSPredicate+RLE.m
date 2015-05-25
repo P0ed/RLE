@@ -1,18 +1,31 @@
-//
-//  NSPredicate+RLE.m
-//  MemNow
-//
-//  Created by Konstantin Sukharev on 09/09/14.
-//  Copyright (c) 2014 MemNow. All rights reserved.
-//
-
 #import "NSPredicate+RLE.h"
+#import "NSArray+RLE.h"
 
 
 @implementation NSPredicate (RLE)
 
 - (NSPredicate *)notPredicate {
 	return [NSCompoundPredicate notPredicateWithSubpredicate:self];
+}
+
+@end
+
+
+@implementation NSString (RLENSPredicate)
+
+- (NSPredicate *)predicate {
+	return [NSPredicate predicateWithFormat:self];
+}
+
+@end
+
+
+@implementation NSDictionary (RLENSPredicate)
+
+- (NSPredicate *)predicate {
+	return cmap(self.allKeys)(^(NSString *key) {
+		return [NSPredicate predicateWithFormat:@"%K = %@", key, self[key]];
+	}).andPredicate;
 }
 
 @end
