@@ -4,7 +4,7 @@
 1. Add the following line to your `Podfile`
 
 	```
-	pod 'RLE'
+	pod 'RLE', :git => 'https://github.com/P0ed/RLE.git', :branch => 'v3'
 	```
 2. Import the public header
 
