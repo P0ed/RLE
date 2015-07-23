@@ -12,4 +12,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'Source/'
   s.frameworks   = 'Foundation', 'UIKit'
+  s.dependancy   = 'YOLOKit/map'
+  s.dependancy   = 'YOLOKit/filter'
+  s.dependancy   = 'YOLOKit/each'
 end
