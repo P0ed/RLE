@@ -1,5 +1,6 @@
 #import "NSPredicate+RLE.h"
 #import "NSArray+RLE.h"
+#import <YOLOKit/YOLO.h>
 
 
 @implementation NSPredicate (RLE)
@@ -23,7 +24,7 @@
 @implementation NSDictionary (RLENSPredicate)
 
 - (NSPredicate *)predicate {
-	return cmap(self.allKeys)(^(NSString *key) {
+	return unwrapArray(self.allKeys).map(^(NSString *key) {
 		return [NSPredicate predicateWithFormat:@"%K = %@", key, self[key]];
 	}).andPredicate;
 }
