@@ -4,7 +4,10 @@
 @interface NSArray (RLE)
 
 - (NSSet *)set;
+- (NSOrderedSet *)orderedSet;
+
 - (NSIndexPath *)indexPath;
+- (NSString *)keyPath;
 
 @end
 
