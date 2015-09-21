@@ -16,5 +16,6 @@ Pod::Spec.new do |s|
   s.dependency 'YOLOKit/map'
   s.dependency 'YOLOKit/select'
   s.dependency 'YOLOKit/each'
+  s.dependency 'YOLOKit/find'
 # s.dependency 'YOLOKit/flatten'
 end
