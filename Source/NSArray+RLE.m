@@ -3,6 +3,10 @@
 
 @implementation NSArray (RLE)
 
+- (NSArray *)tail {
+	return self.count ? [self subarrayWithRange:NSMakeRange(1, self.count - 1)] : @[];
+}
+
 - (NSSet *)set {
 	return [NSSet setWithArray:self];
 }

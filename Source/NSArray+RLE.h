@@ -3,6 +3,8 @@
 
 @interface NSArray (RLE)
 
+- (NSArray *)tail;
+
 - (NSSet *)set;
 - (NSOrderedSet *)orderedSet;
 
